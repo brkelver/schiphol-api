@@ -64,7 +64,7 @@ function SearchBar({ jsonTime, flightDirection }) {
                 {isFetched && data.map((flight) => {
                     return <>
                         <li key={flight.id}>
-                            <Link href={flight.id} className='w-full py-2 text-start flex text-lg text-[#0061FE] font-semibold'>
+                            <Link href={flightDirection === 'D' ? `/departures/${flight.id}?id=${flight.id}`: `/arrivals/${flight.id}?id=${flight.id}`} className='w-full py-2 text-start flex text-lg text-[#0061FE] font-semibold'>
                                 <div className='flex w-1/3 space-x-2'>
                                     <p>{flight.prefixIATA}</p>
                                     <p>{flight.flightNumber}</p>
