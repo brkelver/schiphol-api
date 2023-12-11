@@ -2,8 +2,11 @@ import Link from 'next/link';
 import React from 'react';
 import SearchBar from './SearchBar';
 import DropDown from './DropDown';
+import { getDateNow } from '@/helpers/helper';
 
-function Filters({jsonTime, flightDirection}) {
+const jsonTime = getDateNow();
+
+function Filters({flightDirection}) {
 
     return (
         <div className='flex h-[120px] border-b-4 border-black mb-5 justify-around items-center text-center divide-solid divide-x-[1px] divide-black'>
