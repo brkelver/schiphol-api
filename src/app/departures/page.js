@@ -1,16 +1,13 @@
 import Filters from '@/components/Filters';
 import FlightsList from '@/components/FlightsList';
-import { getDateNow } from '@/helpers/helper';
 import React from 'react';
 
-function Departures(props) {
+function Departures() {
 
-    const jsonTime = getDateNow();
-    
     return (
         <div className='container max-w-7xl'>
-            <Filters jsonTime={jsonTime} flightDirection={'D'} />
-            <FlightsList jsonTime={jsonTime} flightDirection={'D'} />
+            <Filters  flightDirection={'D'} />
+            <FlightsList  flightDirection={'D'} />
         </div>
     );
 }

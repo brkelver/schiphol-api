@@ -3,12 +3,13 @@ import React, { useState, memo, useRef } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import FlightCard from './FlightCard';
 import PreviousFlights from './PreviousFlights';
-import { fetchFlights, filterNextData, getDayMonth, getDayParamApiURL, getMainApiURL, getRouteParamApiURL } from '@/helpers/helper';
+import { fetchFlights, filterNextData, getDateNow, getDayMonth, getDayParamApiURL, getMainApiURL, getRouteParamApiURL } from '@/helpers/helper';
 import { useSearchParams } from 'next/navigation';
 import {FlightCardSpinner} from './Spinner';
 
+const jsonTime = getDateNow();
 
-const FlightCardDepertures = memo(function FlightCardDepertures({ jsonTime, flightDirection }) {
+const FlightCardDepertures = memo(function FlightCardDepertures({ flightDirection }) {
 
     const params = useSearchParams();
     

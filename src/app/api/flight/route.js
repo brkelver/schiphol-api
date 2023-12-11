@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 
 export async function GET(request) {
     let params = '';
-    
+    console.log(process.env.APP_ID);
     const { searchParams } = new URL(request.url);
     searchParams.forEach((v) => params+=`${v}`);
 
@@ -12,8 +12,8 @@ export async function GET(request) {
         headers: {
             'accept': 'application/json',
             'resourceversion': 'v4',
-            'app_id':'3ba059da',
-            'app_key':'8ef03c4010974ac06f2169855a8b5d6f'
+            'app_id':process.env.APP_ID,
+            'app_key':process.env.APP_KEY
         }
     };
     
