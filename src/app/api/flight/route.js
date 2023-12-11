@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 
 export async function GET(request) {
     let params = '';
-    console.log(process.env.APP_ID);
+    
     const { searchParams } = new URL(request.url);
     searchParams.forEach((v) => params+=`${v}`);
 
